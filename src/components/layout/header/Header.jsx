@@ -1,7 +1,20 @@
-import styles from './Header.module.scss';
+import styles from "./Header.module.scss";
+import { useAuth } from "../../../hooks/useAuth";
+import { BiLeftArrowAlt } from "react-icons/bi";
+import Hamburger from "../hamburger/Hamburger"
 
-const Header = () => {
-  return <div className={styles.header}>Header</div>
-}
+const Header = ({ backLink }) => {
+  const { isAuth } = useAuth();
 
-export default Header
+  return (
+    <header className={styles.header}>
+      <button onClick={() => {}}>
+        <BiLeftArrowAlt />
+      </button>
+      {/* User profile */}
+      <Hamburger />
+    </header>
+  );
+};
+
+export default Header;
